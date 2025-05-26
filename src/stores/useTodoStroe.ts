@@ -11,6 +11,7 @@ type TodoStore = {
     addTodo: (text: string) => void;
     toggleTodo: (id: number) => void;
     deleteTodo: (id: number) => void;
+    updateTodo: (id: number, newText: string) => void;
 }
 
 export const useTodoStore = create<TodoStore>((set) => ({
@@ -36,4 +37,10 @@ export const useTodoStore = create<TodoStore>((set) => ({
         set((state) => ({
             todos: state.todos.filter((todo) => todo.id !== id),
         })),
+    updateTodo: (id, newText) =>
+        set((state) => ({
+            todos: state.todos.map((todo) =>
+            todo.id === id ? { ...todo, text: newText } : todo
+        ),
+    })),
 }));

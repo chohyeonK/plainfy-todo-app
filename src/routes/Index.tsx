@@ -4,21 +4,22 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import NotFound from "../pages/NotFound";
-import TodoList from "../pages/TodoList";
+import TodoListPage from "../pages/TodoListPage";
+import AddEditTaskPage from "../pages/AddEditTaskPage";
 
 const Index = () => {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/todos" element={<TodoList />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/todos" element={<TodoListPage />} />
+        <Route path="/edit/:id" element={<AddEditTaskPage />} />
+        <Route path="/add" element={<AddEditTaskPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Layout>
   )
 }
 
