@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTodoStore, type Todo } from '../stores/useTodoStroe'
+import { useTodoStore, type Todo } from '../stores/useTodoStore'
 import { useNavigate } from 'react-router-dom';
 
 type Props = {

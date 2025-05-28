@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useTodoStore } from '../stores/useTodoStroe';
+import { useTodoStore } from '../stores/useTodoStore';
 
 const AddEditTaskPage = () => {
     const { id } = useParams();
